@@ -43,3 +43,87 @@ code {
 .transition {
   transition: all 0.3s ease;
 }
+/* Add to existing index.css */
+:root {
+  --primary: #0d6efd;
+  --primary-dark: #0b5ed7;
+  --secondary: #6c757d;
+  --dark: #212529;
+  --light: #f8f9fa;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar transition */
+.navbar {
+  transition: all 0.3s ease;
+  background-color: transparent !important;
+}
+.navbar-scrolled {
+  background-color: var(--dark) !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Product card hover */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.15) !important;
+}
+.product-img {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+/* Fade-in animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero carousel overlay */
+.carousel-item {
+  height: 70vh;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+.carousel-caption {
+  background: rgba(0,0,0,0.5);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark);
+  color: #ccc;
+  margin-top: 4rem;
+  padding: 3rem 0 1rem;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
