@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import api from './api';
-import { jwtDecode } from 'jwt-decode';
+import jwtDecode from 'jwt-decode';  // Fixed: default import
 
 const AuthContext = createContext();
 export const useAuth = () => useContext(AuthContext);
@@ -15,7 +15,9 @@ export const AuthProvider = ({ children }) => {
       try {
         const decoded = jwtDecode(token);
         setUser({ username: decoded.username });
-      } catch { localStorage.removeItem('access_token'); }
+      } catch (e) {
+        localStorage.removeItem('access_token');
+      }
     }
     setLoading(false);
   }, []);
@@ -40,5 +42,9 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
-  return <AuthContext.Provider value={{ user, login, register, logout, loading }}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={{ user, login, register, logout, loading }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
