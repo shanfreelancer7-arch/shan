@@ -8,6 +8,8 @@ import About from './components/About';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import Login from './components/Login';
+import OrderTracking from './components/OrderTracking';
+import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 
 const PrivateRoute = ({ children }) => {
@@ -23,6 +25,7 @@ function AppRoutes() {
       <Route path="/products" element={<Products />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/track-orders" element={<PrivateRoute><OrderTracking /></PrivateRoute>} />
     </Routes>
   );
 }
@@ -32,9 +35,10 @@ function App() {
     <AuthProvider>
       <BrowserRouter>
         <Navbar />
-        <div className="container mt-4">
+        <div style={{ marginTop: '76px' }}> {/* offset for fixed navbar */}
           <AppRoutes />
         </div>
+        <Footer />
         <WhatsAppButton />
       </BrowserRouter>
     </AuthProvider>
