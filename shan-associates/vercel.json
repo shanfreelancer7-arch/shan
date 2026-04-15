@@ -1,0 +1,11 @@
+{
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/build",
+  "installCommand": "cd frontend && npm install",
+  "framework": "create-react-app",
+  "devCommand": "cd frontend && npm start",
+  "environment": {
+    "REACT_APP_API_URL": "https://your-backend-api-url.com/api/",
+    "REACT_APP_WHATSAPP_NUMBER": "919876543210"
+  }
+}
