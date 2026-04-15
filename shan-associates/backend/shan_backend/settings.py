@@ -106,7 +106,7 @@ REST_FRAMEWORK = {
 }
 
 # CORS settings – allow your frontend domains
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:3000').split(',')
+CORS_ALLOWED_ORIGINS = os.getenv('https://shan-omega.vercel.app/', 'http://localhost:3000').split(',')
 # If you need to allow all (for development only), set CORS_ALLOW_ALL_ORIGINS = True
 # CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only for development
 
